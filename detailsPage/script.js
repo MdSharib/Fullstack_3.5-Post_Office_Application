@@ -41,8 +41,9 @@ const renderontoUI = (data) => {
 };
 
 // render inital ip details
-const renderIpdDetails = () => {
+const renderIpDetails = () => {
   coordinates = userData["loc"].split(",");
+  const hostName = window.location.hostname;
 
   ipdiv.innerHTML = `<div id="ip-address">IP Address: ${userData["ip"]}</div>
     <div id="ip-details">
@@ -51,7 +52,7 @@ const renderIpdDetails = () => {
         <div id="organisation" class="ip-info">Organisation: ${userData["org"]}</div>
         <div id="longitude" class="ip-info">Long: ${coordinates[1]}</div>
         <div id="region"  class="ip-info">Region: ${userData["region"]}</div>
-        <div id="hostname" class="ip-info">Hostname:</div>
+        <div id="hostname" class="ip-info">Hostname: ${hostName}</div>
     </div>`;
 };
 
@@ -127,7 +128,7 @@ const getUserDetailsHandler = async () => {
     }
     userData = JSON.parse(JSON.stringify(data));
 
-    renderIpdDetails();
+    renderIpDetails();
     renderGoogleMap();
     renderMoreInfo();
     renderPostOffices();
