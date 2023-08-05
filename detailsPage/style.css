@@ -129,6 +129,7 @@ main{
     border-radius: 6px;
     padding: 6px;
     border: 2px solid #B8BCCC;
+    color: white;
 }
 
 /* /post office styling */
@@ -136,9 +137,9 @@ main{
 #post-offices{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 83%;
     gap: 65px;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 #office{
@@ -146,7 +147,7 @@ main{
 }
 
 .office-inner{
-    width: 40%;
+    width: 47%;
     background-color: rgb(87, 90, 133);
     height: 325px;
     display: flex;

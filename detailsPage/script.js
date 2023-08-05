@@ -3,6 +3,7 @@ const ipdiv = document.getElementById("ip-div");
 const googleMap = document.getElementById("google-map");
 const moreInfo = document.getElementById("more-info");
 const postOfficesScreen = document.getElementById("post-offices");
+const searchBar = document.getElementById("search");
 
 
 const TOKEN = '181535a724bccd';
@@ -62,6 +63,28 @@ return datetime;
 // }
 
 
+const renderontoUI = (data) => {
+
+    if(data.length === 0){
+        postOfficesScreen.innerHTML = `<div style="text-align: center; width: 100%;">No result found!</div>`;
+        return;
+    }
+
+    let toRender = "";
+    data.map((val) => {
+    return toRender += `
+      <div id="office"  class="office-inner"> 
+      <div id="name">Name: ${val["Name"]}</div>
+      <div id="branch">Branch Name: ${val["BranchType"]}</div>
+      <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
+      <div id="district">District: ${val["District"]}</div>
+      <div id="division">Division: ${val["Division"]}</div>
+  </div>
+        `
+    })
+    postOfficesScreen.innerHTML = toRender;
+}
+
 
 
 // render inital ip details
@@ -89,7 +112,6 @@ const renderGoogleMap = () => {
 // render more info 
 const renderMoreInfo = () => {
     const dateTime = extractFromTimeZone();
-    
     moreInfo.innerHTML = `<div id="time-zone">Time Zone: ${userData["timezone"]}</div>
     <div id="date-time">Date and Time: ${dateTime}</div>
     <div id="pincode">Pincode: ${userData["postal"]}</div>
@@ -100,8 +122,16 @@ const renderMoreInfo = () => {
 
 // render post offices
 const renderPostOffices = async() => {
+    try{
     const res = await fetch(`https://api.postalpincode.in/pincode/${userData['postal']}`);
-    const data = await res.json();
+    const data = await res.json();  
+
+    if(!data){
+        throw new Error("error while fetching postal details");
+        return;
+    }
+
+
     postOffices = JSON.parse(JSON.stringify(data[0]["PostOffice"]));
     postOfficeMessage = JSON.parse(JSON.stringify(data[0]["Message"]));
     const message = document.getElementById("message");
@@ -110,23 +140,49 @@ const renderPostOffices = async() => {
     console.log(postOffices);
 
     // render post ofcs onto UI - postOffices
-    let toRender = "";
-    postOffices.map((val) => {
-    return toRender += `
-      <div id="office"  class="office-inner"> 
-      <div id="name">Name: ${val["Name"]}</div>
-      <div id="branch">Branch Name: ${val["BranchType"]}</div>
-      <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
-      <div id="district">District: ${val["District"]}</div>
-      <div id="division">Division: ${val["Division"]}</div>
-  </div>
-        `
-    })
-    postOfficesScreen.innerHTML = toRender;
+    renderontoUI(postOffices);
+    }catch(err) {
+        console.error(err.message);
+    }
+
+//     let toRender = "";
+//     postOffices.map((val) => {
+//     return toRender += `
+//       <div id="office"  class="office-inner"> 
+//       <div id="name">Name: ${val["Name"]}</div>
+//       <div id="branch">Branch Name: ${val["BranchType"]}</div>
+//       <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
+//       <div id="district">District: ${val["District"]}</div>
+//       <div id="division">Division: ${val["Division"]}</div>
+//   </div>
+//         `
+//     })
+//     postOfficesScreen.innerHTML = toRender;
     
 }
 
 
+
+
+
+// search bar handler
+const searchBarHandler = (ev) => {
+    const searched = ev.target.value.toLowerCase();
+    const searchedOffices = postOffices.filter((val) => {
+        const nam = val["Name"].toLowerCase();
+        const branch = val["BranchType"].toLowerCase();
+        if(nam.includes(searched) || branch.includes(searched)){
+            return val;
+        }
+    });
+    // console.log(searchedOffices);
+    console.log("search bar->");
+    console.log(searchedOffices)
+    renderontoUI(searchedOffices);
+}
+
+
+// get initial user detials
 const getUserDetailsHandler = async() => {
     const res = await fetch(`https://ipinfo.io/json?token=${TOKEN}`);
     const data = await res.json();
@@ -142,6 +198,8 @@ const getUserDetailsHandler = async() => {
 }
 
 document.addEventListener("DOMContentLoaded", getUserDetailsHandler);
+
+searchBar.addEventListener("keyup", searchBarHandler)
 
 
 
