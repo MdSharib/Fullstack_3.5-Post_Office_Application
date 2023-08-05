@@ -75,3 +75,88 @@ main{
     border:0;
 
 }
+
+/* more info section */
+#more-info-div{
+    background-color: black;
+    color: #B8BCCC;
+    padding: 25px;
+}
+
+.more-info-heading{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#more-info{
+    flex-direction: column;
+    display: flex;
+    gap: 25px;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+
+/* post office section */
+
+#post-offices-div{
+    background-color: black;
+    color: rgb(184, 188, 204);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 35px;
+}
+#post-office-heading{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+#search-bar{
+    width: 75%;
+}
+
+
+#search-bar input{
+    width: 100%;
+    height: 45px;
+    background-color: #000;
+    border-radius: 6px;
+    padding: 6px;
+    border: 2px solid #B8BCCC;
+}
+
+/* /post office styling */
+
+#post-offices{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+
+#office{
+
+}
+
+.office-inner{
+    width: 44%;
+    background-color: #575A85;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 6px;
+}
+
+#office div{
+    font-size: 27px;
+    font-weight: 700;
+}
