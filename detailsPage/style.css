@@ -137,7 +137,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 20px;
+    gap: 65px;
     justify-content: center;
 }
 
@@ -146,8 +146,8 @@ main{
 }
 
 .office-inner{
-    width: 44%;
-    background-color: #575A85;
+    width: 40%;
+    background-color: rgb(87, 90, 133);
     height: 325px;
     display: flex;
     flex-direction: column;
@@ -157,6 +157,6 @@ main{
 }
 
 #office div{
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 700;
 }
