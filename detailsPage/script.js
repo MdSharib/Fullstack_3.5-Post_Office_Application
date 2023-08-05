@@ -2,6 +2,7 @@
 const ipdiv = document.getElementById("ip-div");
 const googleMap = document.getElementById("google-map");
 const moreInfo = document.getElementById("more-info");
+const postOfficesScreen = document.getElementById("post-offices");
 
 
 const TOKEN = '181535a724bccd';
@@ -105,6 +106,24 @@ const renderPostOffices = async() => {
     postOfficeMessage = JSON.parse(JSON.stringify(data[0]["Message"]));
     const message = document.getElementById("message");
     message.innerHTML = `${postOfficeMessage}`
+
+    console.log(postOffices);
+
+    // render post ofcs onto UI - postOffices
+    let toRender = "";
+    postOffices.map((val) => {
+    return toRender += `
+      <div id="office"  class="office-inner"> 
+      <div id="name">Name: ${val["Name"]}</div>
+      <div id="branch">Branch Name: ${val["BranchType"]}</div>
+      <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
+      <div id="district">District: ${val["District"]}</div>
+      <div id="division">Division: ${val["Division"]}</div>
+  </div>
+        `
+    })
+    postOfficesScreen.innerHTML = toRender;
+    
 }
 
 
