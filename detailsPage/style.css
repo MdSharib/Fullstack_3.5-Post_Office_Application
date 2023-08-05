@@ -31,7 +31,7 @@ main {
 #ip-details {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0px;
+  margin: 25px 0px;
   gap: 10px;
 }
 
@@ -122,7 +122,7 @@ main {
   background-color: #000;
   border-radius: 6px;
   padding: 6px;
-  border: 2px solid #b8bccc;
+  border: 1px solid #b8bccc;
   color: white;
 }
 

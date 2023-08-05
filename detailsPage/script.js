@@ -29,13 +29,13 @@ const renderontoUI = (data) => {
   data.map((val) => {
     return (toRender += `
       <div id="office"  class="office-inner"> 
-      <div id="name">Name: ${val["Name"]}</div>
-      <div id="branch">Branch Name: ${val["BranchType"]}</div>
-      <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
-      <div id="district">District: ${val["District"]}</div>
-      <div id="division">Division: ${val["Division"]}</div>
-  </div>
-        `);
+        <div id="name">Name: ${val["Name"]}</div>
+        <div id="branch">Branch Name: ${val["BranchType"]}</div>
+        <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
+        <div id="district">District: ${val["District"]}</div>
+        <div id="division">Division: ${val["Division"]}</div>
+      </div>
+    `);
   });
   postOfficesScreen.innerHTML = toRender;
 };

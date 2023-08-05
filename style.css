@@ -40,13 +40,15 @@ main #left-screen {
 
 #left-heading {
   color: #575a85;
-  font-size: 40px;
-  font-weight: 600;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 #left-content #left-description {
   font-size: 20px;
   /* margin: 25px 0px; */
+  letter-spacing: 1px;
 }
 
 #left-content #left-image {
@@ -85,7 +87,18 @@ main #right-screen {
   background-color: #575a85;
   border: 2px solid #b8bccc;
   height: 40px;
+  font-size: 17px;
+    letter-spacing: 1px;
   border-radius: 6px;
   color: #b8bccc;
   cursor: pointer;
+}
+#right-btn button:hover{
+
+  background-color: white;
+    border: none;
+    color: rgb(135 137 145);
+    font-size: 17px;
+    letter-spacing: 1px;
+  
 }
