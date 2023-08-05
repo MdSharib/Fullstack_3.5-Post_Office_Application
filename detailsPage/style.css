@@ -1,163 +1,153 @@
-
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
-    font-family: 'Didact Gothic', sans-serif;
-font-family: 'Inter', sans-serif;
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Didact Gothic", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-main{
-    width: 100%;
-    height: 100vh;
+main {
+  width: 100%;
+  height: 100vh;
 }
 
 /* ip styling */
-#ip-div{
-    background-color: black;
-    color: #B8BCCC;
-    padding: 25px;
+#ip-div {
+  background-color: black;
+  color: #b8bccc;
+  padding: 25px;
 }
 
-#ip-address{
-    font-size: 35px;
-    font-weight: 600;
+#ip-address {
+  font-size: 35px;
+  font-weight: 600;
 }
 
-#ip-details{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0px;
-    gap: 10px;
+#ip-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  gap: 10px;
 }
 
-.ip-info{
-    width: 30%;
-    font-size: 25px;
-    font-weight: 600;
+.ip-info {
+  width: 30%;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 /* google map styling */
 
-#google-map-div{
-    background-color: #575A85;
-    color: #B8BCCC;
-    display: flex;
-    gap: 25px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+#google-map-div {
+  background-color: #575a85;
+  color: #b8bccc;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-#google-map-heading{
-    font-size: 40px;
-    font-weight: 600;
+#google-map-heading {
+  font-size: 40px;
+  font-weight: 600;
 }
 
-#google-map{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    height: 500px;
+#google-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 500px;
+  margin: 15px 0px;
 }
-#google-map iframe{
-    width: 100%;
-    height: 100%;
-    border:0;
-
+#google-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* more info section */
-#more-info-div{
-    background-color: black;
-    color: #B8BCCC;
-    padding: 25px;
+#more-info-div {
+  background-color: black;
+  color: #b8bccc;
+  padding: 25px;
 }
 
-.more-info-heading{
-    font-size: 40px;
-    text-align: center;
-    font-weight: 600;
+.more-info-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
 }
 
-#more-info{
-    flex-direction: column;
-    display: flex;
-    gap: 25px;
-    font-size: 20px;
-    margin: 15px 0px;
+#more-info {
+  flex-direction: column;
+  display: flex;
+  gap: 25px;
+  font-size: 20px;
+  margin: 15px 0px;
 }
-
 
 /* post office section */
 
-#post-offices-div{
-    background-color: black;
-    color: rgb(184, 188, 204);
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    align-items: center;
-    gap: 35px;
+#post-offices-div {
+  background-color: black;
+  color: rgb(184, 188, 204);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  gap: 35px;
 }
-#post-office-heading{
-    font-size: 40px;
-    text-align: center;
-    font-weight: 600;
-}
-
-
-#search-bar{
-    width: 75%;
+#post-office-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
 }
 
+#search-bar {
+  width: 75%;
+}
 
-#search-bar input{
-    width: 100%;
-    height: 45px;
-    background-color: #000;
-    border-radius: 6px;
-    padding: 6px;
-    border: 2px solid #B8BCCC;
-    color: white;
+#search-bar input {
+  width: 100%;
+  height: 45px;
+  background-color: #000;
+  border-radius: 6px;
+  padding: 6px;
+  border: 2px solid #b8bccc;
+  color: white;
 }
 
 /* /post office styling */
 
-#post-offices{
-    display: flex;
-    flex-wrap: wrap;
-    width: 83%;
-    gap: 65px;
-    /* justify-content: center; */
+#post-offices {
+  display: flex;
+  flex-wrap: wrap;
+  width: 83%;
+  gap: 65px;
+  /* justify-content: center; */
 }
 
-#office{
-
+.office-inner {
+  width: 47%;
+  background-color: rgb(87, 90, 133);
+  height: 325px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 6px;
 }
 
-.office-inner{
-    width: 47%;
-    background-color: rgb(87, 90, 133);
-    height: 325px;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    gap: 20px;
-    border-radius: 6px;
-}
-
-#office div{
-    font-size: 25px;
-    font-weight: 700;
+#office div {
+  font-size: 25px;
+  font-weight: 700;
 }
