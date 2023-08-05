@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <!-- ip address details section -->
+        <div id="ip-div">
+            <div id="ip-address">IP Address: 123:45:34</div>
+            <div id="ip-details">
+                <div id="latitute" class="ip-info">Lat:</div>
+                <div id="city" class="ip-info">City:</div>
+                <div id="organisation" class="ip-info">Organisation:</div>
+                <div id="longitude" class="ip-info">Long:</div>
+                <div id="region"  class="ip-info">Region:</div>
+                <div id="hostname" class="ip-info">Hostname:</div>
+            </div>
+        </div>
+
+        <!-- google maps details section -->
+        <div id="google-map-div">
+            <div id="google-map-heading">Your Current Location</div>
+            <div id="goolg-map"></div>
+        </div>
+
+
+        <!-- more info section -->
+        <div id="more-info-div">
+            <div class="more-info-heading">More Information About You</div>
+            <div id="more-info">
+                <div id="time-zone">Time Zone:</div>
+                <div id="date-time">Date and Time:</div>
+                <div id="pincode">Pincode:</div>
+                <div id="message">Message: Number of pincodes found:</div>
+            </div>
+        </div>
+
+
+<!-- post offices section -->
+        <div id="post-offices-div">
+            <div id="search-bar">
+                <input type="text" placeholder="Seach by name or branch">
+            </div>
+            <!-- all post offices -->
+            <div id="post-offices">
+                <!-- single post office -->
+                <div id="office">
+                    <div id="name">Name</div>
+                    <div id="branch">Branch Type</div>
+                    <div id="delivery">Delivery Status</div>
+                    <div id="district">District</div>
+                    <div id="division">Division</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
