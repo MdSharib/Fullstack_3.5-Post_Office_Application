@@ -29,11 +29,11 @@ const renderontoUI = (data) => {
   data.map((val) => {
     return (toRender += `
       <div id="office"  class="office-inner"> 
-        <div id="name">Name: ${val["Name"]}</div>
-        <div id="branch">Branch Name: ${val["BranchType"]}</div>
-        <div id="delivery">Delivery Status: ${val["DeliveryStatus"]}</div>
-        <div id="district">District: ${val["District"]}</div>
-        <div id="division">Division: ${val["Division"]}</div>
+        <div id="name">Name: <span class="result-styling">${val["Name"]}</span></div>
+        <div id="branch">Branch Name: <span class="result-styling">${val["BranchType"]}</span></div>
+        <div id="delivery">Delivery Status: <span class="result-styling">${val["DeliveryStatus"]}</span></div>
+        <div id="district">District: <span class="result-styling">${val["District"]}</span></div>
+        <div id="division">Division: <span class="result-styling">${val["Division"]}</span></div>
       </div>
     `);
   });
@@ -45,14 +45,14 @@ const renderIpDetails = () => {
   coordinates = userData["loc"].split(",");
   const hostName = window.location.hostname;
 
-  ipdiv.innerHTML = `<div id="ip-address">IP Address: ${userData["ip"]}</div>
+  ipdiv.innerHTML = `<div id="ip-address">IP Address: <span class="result-styling">${userData["ip"]}</span></div>
     <div id="ip-details">
-        <div id="latitute" class="ip-info">Lat: ${coordinates[0]}</div>
-        <div id="city" class="ip-info">City: ${userData["city"]}</div>
-        <div id="organisation" class="ip-info">Organisation: ${userData["org"]}</div>
-        <div id="longitude" class="ip-info">Long: ${coordinates[1]}</div>
-        <div id="region"  class="ip-info">Region: ${userData["region"]}</div>
-        <div id="hostname" class="ip-info">Hostname: ${hostName}</div>
+        <div id="latitute" class="ip-info">Lat: <span class="result-styling">${coordinates[0]}</span></div>
+        <div id="city" class="ip-info">City: <span class="result-styling">${userData["city"]}</span></div>
+        <div id="organisation" class="ip-info">Organisation: <span class="result-styling">${userData["org"]}</span></div>
+        <div id="longitude" class="ip-info">Long: <span class="result-styling">${coordinates[1]}</span></div>
+        <div id="region"  class="ip-info">Region: <span class="result-styling">${userData["region"]}</span></div>
+        <div id="hostname" class="ip-info">Hostname: <span class="result-styling">${hostName}</span></div>
     </div>`;
 };
 
@@ -65,9 +65,9 @@ const renderGoogleMap = () => {
 // render more info
 const renderMoreInfo = () => {
   const dateTime = extractFromTimeZone();
-  moreInfo.innerHTML = `<div id="time-zone">Time Zone: ${userData["timezone"]}</div>
-    <div id="date-time">Date and Time: ${dateTime}</div>
-    <div id="pincode">Pincode: ${userData["postal"]}</div>
+  moreInfo.innerHTML = `<div id="time-zone">Time Zone: <span class="result-styling">${userData["timezone"]}</span></div>
+    <div id="date-time">Date and Time: <span class="result-styling">${dateTime}</span></div>
+    <div id="pincode">Pincode: <span class="result-styling">${userData["postal"]}</span></div>
     <div id="message">Message: Number of pincode(s) found: </div>
     `;
 };
@@ -88,7 +88,8 @@ const renderPostOffices = async () => {
     postOffices = JSON.parse(JSON.stringify(data[0]["PostOffice"]));
     postOfficeMessage = JSON.parse(JSON.stringify(data[0]["Message"]));
     const message = document.getElementById("message");
-    message.innerHTML = `${postOfficeMessage}`;
+    const messageSplit  = postOfficeMessage.split(":");
+    message.innerHTML = `${messageSplit[0]}: <span class="result-styling">${messageSplit[1]}</span>`;
 
     console.log(postOffices);
 

@@ -79,6 +79,10 @@ main #right-screen {
   font-weight: 600;
 }
 
+.result-styling{
+  color: white;
+}
+
 #right-btn {
   width: 35%;
 }
@@ -102,3 +106,5 @@ main #right-screen {
     letter-spacing: 1px;
   
 }
+
+

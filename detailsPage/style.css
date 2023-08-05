@@ -35,6 +35,10 @@ main {
   gap: 10px;
 }
 
+.result-styling{
+  color: white;
+}
+
 .ip-info {
   width: 30%;
   font-size: 25px;

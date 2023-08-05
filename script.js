@@ -4,7 +4,7 @@ const TOKEN = "181535a724bccd";
 let userIp = "";
 
 const renderIp = () => {
-  ipScreen.innerHTML = `Your Current IP Address is ${userIp}`;
+  ipScreen.innerHTML = `Your Current IP Address is <span class="result-styling">${userIp}</span>`;
 };
 
 const getIpHandler = async () => {
